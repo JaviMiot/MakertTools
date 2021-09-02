@@ -1,0 +1,43 @@
+@import '../vars';
+
+.btn-tools {
+  width: 205px;
+  height: 205px;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 32px;
+  border: none;
+  background-color: $blue-sky;
+  box-shadow: 5px 10px 10px rgba(2, 40, 89, 0.3);
+  transition: transform 1s ease;
+
+  .btn-tools__imagen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      height: 80px;
+      width: 80px;
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      color: $white;
+      width: 120px;
+      font-weight: bold;
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      text-align: center;
+    }
+  }
+}
+
+.btn-tools:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s linear;
+}
+
+.btn-tools:active {
+  background-color: $dark-blue;
+}

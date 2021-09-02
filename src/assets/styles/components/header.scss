@@ -1,0 +1,23 @@
+@import '../vars';
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: $header-height;
+  background-color: $dark-blue;
+  box-shadow: 0px 5px 4px $box-shadow-blue-dark;
+  .header__title {
+    color: $white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+  }
+
+  img {
+    height: 35px;
+    width: 35px;
+    margin-right: 8px;
+  }
+}
