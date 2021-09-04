@@ -10,6 +10,7 @@
   background-color: $blue-sky;
   box-shadow: 5px 10px 10px rgba(2, 40, 89, 0.3);
   transition: transform 1s ease;
+  cursor: pointer;
 
   .btn-tools__imagen-container {
     display: flex;

@@ -1,25 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 //? Imagen exports
 import printerLogo from '@icons/3dPrinterLogo.svg';
 import laserLogo from '@icons/laserLogo.svg';
 
 //? components
-import Header from '../components/header';
 import Tool from '../components/tool';
 
-//? styles
-import '../assets/styles/main.scss';
-
-const App = () => {
+const Home = () => {
   return (
     <div className='main-container'>
-      <Header />
       <section className='tools-containers'>
-        <Tool
-          name='3D Printer Cost Calculator'
-          image={printerLogo}
-          alt='3dPrinterLogo'
-        />
+        <Link to='/printercost'>
+          <Tool
+            name='3D Printer Cost Calculator'
+            image={printerLogo}
+            alt='3dPrinterLogo'
+          />
+        </Link>
         <Tool
           name='Laser Cut Cost Calculator'
           image={laserLogo}
@@ -30,4 +28,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;
