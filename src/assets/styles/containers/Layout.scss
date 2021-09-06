@@ -1,0 +1,14 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+}
+
+.main-container {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) {
+  .main-container {
+    width: 85%;
+  }
+}

@@ -7,24 +7,24 @@ import laserLogo from '@icons/laserLogo.svg';
 //? components
 import Tool from '../components/tool';
 
+import '../assets/styles/containers/Home.scss';
+
 const Home = () => {
   return (
-    <div className='main-container'>
-      <section className='tools-containers'>
-        <Link to='/printercost'>
-          <Tool
-            name='3D Printer Cost Calculator'
-            image={printerLogo}
-            alt='3dPrinterLogo'
-          />
-        </Link>
+    <section className='tools-containers'>
+      <Link to='/printercost'>
         <Tool
-          name='Laser Cut Cost Calculator'
-          image={laserLogo}
-          alt='Laser Machine Logo'
+          name='3D Printer Cost Calculator'
+          image={printerLogo}
+          alt='3dPrinterLogo'
         />
-      </section>
-    </div>
+      </Link>
+      <Tool
+        name='Laser Cut Cost Calculator'
+        image={laserLogo}
+        alt='Laser Machine Logo'
+      />
+    </section>
   );
 };
 
