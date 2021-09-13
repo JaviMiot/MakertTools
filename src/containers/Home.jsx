@@ -19,11 +19,13 @@ const Home = () => {
           alt='3dPrinterLogo'
         />
       </Link>
-      <Tool
-        name='Laser Cut Cost Calculator'
-        image={laserLogo}
-        alt='Laser Machine Logo'
-      />
+      <Link to='/lasercost'>
+        <Tool
+          name='Laser Cut Cost Calculator'
+          image={laserLogo}
+          alt='Laser Machine Logo'
+        />
+      </Link>
     </section>
   );
 };

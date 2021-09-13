@@ -1,0 +1,61 @@
+@import '../_vars';
+
+.list-material--container {
+  width: 100%;
+  padding: 0px 5%;
+  .list-material--row,
+  .list-material--header {
+    display: grid;
+    grid-template-columns: 3fr repeat(3, 1fr);
+  }
+}
+
+.list-material--header {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  background-color: $green;
+  padding: 4px;
+  border-radius: 3px;
+  color: $white;
+  box-shadow: 2px 3px 5px rgba(2, 75, 50, 0.5);
+
+  .header-1 {
+    grid-area: header1;
+  }
+  .header-2 {
+    grid-area: header2;
+  }
+  .header-3 {
+    grid-area: header3;
+  }
+  .header-4 {
+    grid-area: header4;
+  }
+}
+
+.list-material--row {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(34, 66, 94, 0.3);
+  .data-1 {
+    grid-area: data1;
+  }
+  .data-2 {
+    grid-area: data2;
+  }
+  .data-3 {
+    grid-area: data3;
+  }
+  .data-4 {
+    grid-area: data4;
+  }
+}
+
+.area--header {
+  grid-template-areas: 'header1 header2 header3 header4';
+}
+
+.area--itemsData {
+  grid-template-areas: 'data1 data2 data3 data4';
+}

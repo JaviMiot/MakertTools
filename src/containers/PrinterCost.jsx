@@ -1,13 +1,13 @@
 import React from 'react';
-import InputSettingNumber from './InputSettingNumber';
-import DetailResultItem from './DetailResultItem';
+import InputSettingNumber from '../components/InputSettingNumber';
+import DetailResultItem from '../components/DetailResultItem';
+import HeaderSection from '../components/HeaderSection';
 import '../assets/styles/components/printerCost.scss';
 
 const PrinterCost = () => {
   return (
     <>
-      <h2 className='name-tool'>3d Printer Cost</h2>
-      <h3 className='name-tool-operation'>Calculate Cost</h3>
+      <HeaderSection title='3d Printer Cost' subtitle='Calculate Cost' />
       <main className='calculator-container'>
         <form className='calculator-printer' action=''>
           <div className='form-inputs-containers'>

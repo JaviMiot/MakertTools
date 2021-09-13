@@ -1,13 +1,16 @@
 import React from 'react';
-import InputSettingNumber from './InputSettingNumber';
-import DetailResultItem from './DetailResultItem';
+import InputSettingNumber from '../components/InputSettingNumber';
+import DetailResultItem from '../components/DetailResultItem';
+import HeaderSection from '../components/HeaderSection';
 import '../assets/styles/components/PrinterSettings.scss';
 
 const PrinterSettings = () => {
   return (
     <>
-      <h2 className='name-tool'>3d Printer Settings</h2>
-      <p className='description-tool'>Add information about your 3D printer</p>
+      <HeaderSection
+        title='3d Printer Settings'
+        description='Add information about your 3D printer'
+      />
 
       <form className='form-settings' action=''>
         <div className='inputs-containers-settings'>

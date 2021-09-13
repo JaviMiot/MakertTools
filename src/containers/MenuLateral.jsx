@@ -8,6 +8,8 @@ import laserIcon from '../assets/static/icons/laserLogo.svg';
 import laserBlueIcon from '../assets/static/icons/laserLogoBlue.svg';
 import homeIcon from '../assets/static/icons/home.svg';
 import homeBlueIcon from '../assets/static/icons/homeBlue.svg';
+import boxIcon from '../assets/static/icons/box.png';
+import boxBlueIcon from '../assets/static/icons/boxBlue.png';
 
 const MenuLateral = () => {
   const handleItemSelect = (event) => {
@@ -51,9 +53,15 @@ const MenuLateral = () => {
     },
     {
       name: 'Laser Settings',
-      url: '/',
+      url: '/lasersettings',
       iconDisable: laserIcon,
       iconEnable: laserBlueIcon,
+    },
+    {
+      name: 'Materials List',
+      url: '/materials-list',
+      iconDisable: boxIcon,
+      iconEnable: boxBlueIcon,
     },
   ];
 
