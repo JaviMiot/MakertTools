@@ -1,0 +1,6 @@
+const actions = {
+  REQUEST_MENU_ITEMS: 'REQUEST_MENU_ITEMS',
+  REQUEST_PRINTER_SETTINGS: 'REQUEST_PRINTER_SETTINGS',
+};
+
+export default actions;

@@ -1,17 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import '../assets/styles/containers/MenuLateral.scss';
 
-import printerIcon from '../assets/static/icons/3dPrinterLogo.svg';
-import printerBlueIcon from '../assets/static/icons/3dPrinterLogoBlue.svg';
-import laserIcon from '../assets/static/icons/laserLogo.svg';
-import laserBlueIcon from '../assets/static/icons/laserLogoBlue.svg';
-import homeIcon from '../assets/static/icons/home.svg';
-import homeBlueIcon from '../assets/static/icons/homeBlue.svg';
-import boxIcon from '../assets/static/icons/box.png';
-import boxBlueIcon from '../assets/static/icons/boxBlue.png';
+const MenuLateral = (props) => {
+  const { menuItems } = props;
+  debugger;
 
-const MenuLateral = () => {
   const handleItemSelect = (event) => {
     const items = document.querySelectorAll('.item-menu');
     const imagenItems = document.querySelectorAll('.item-menu img');
@@ -37,33 +32,6 @@ const MenuLateral = () => {
     itemSelected.classList.add('select--Item');
     imagenIconSelected.src = imagenIconSelected.dataset.iconEnable;
   };
-
-  const menuItems = [
-    {
-      name: 'Home',
-      url: '/',
-      iconDisable: homeIcon,
-      iconEnable: homeBlueIcon,
-    },
-    {
-      name: 'Printer Settings',
-      url: '/printersettings',
-      iconDisable: printerIcon,
-      iconEnable: printerBlueIcon,
-    },
-    {
-      name: 'Laser Settings',
-      url: '/lasersettings',
-      iconDisable: laserIcon,
-      iconEnable: laserBlueIcon,
-    },
-    {
-      name: 'Materials List',
-      url: '/materials-list',
-      iconDisable: boxIcon,
-      iconEnable: boxBlueIcon,
-    },
-  ];
 
   return (
     <aside className='lateral-menu-container'>
@@ -94,4 +62,8 @@ const MenuLateral = () => {
   );
 };
 
-export default MenuLateral;
+const mapStateToProps = (state) => {
+  return { menuItems: state.menuItems };
+};
+
+export default connect(mapStateToProps, null)(MenuLateral);
