@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import '../assets/styles/components/ColapseSetups.scss';
 
 const ColapseSetups = (props) => {
@@ -6,8 +6,11 @@ const ColapseSetups = (props) => {
   const [simbol, setSimbol] = useState('+');
   const [colorSimbol, setColor] = useState('btn-show--blue');
 
+  //*Created referens to elements
+  const colapseItemRef = useRef();
+
   const handleColapse = (event) => {
-    const colapseItem = event.target.parentNode.parentNode.childNodes[1];
+    const colapseItem = colapseItemRef.current;
     if (colapseItem.classList.contains('show')) {
       colapseItem.classList.remove('show');
       setSimbol('+');
@@ -32,7 +35,9 @@ const ColapseSetups = (props) => {
             {simbol}
           </button>
         </div>
-        <div className='colapse-item'>{children}</div>
+        <div className='colapse-item' ref={colapseItemRef}>
+          {children}
+        </div>
       </div>
     </>
   );

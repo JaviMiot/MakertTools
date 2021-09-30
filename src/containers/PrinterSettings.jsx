@@ -5,6 +5,8 @@ import DetailResultItem from '../components/DetailResultItem';
 import HeaderSection from '../components/HeaderSection';
 import '../assets/styles/components/PrinterSettings.scss';
 
+import Loading from '../components/Loading';
+
 const PrinterSettings = () => {
   const url = 'https://api-makertools.herokuapp.com/';
   const settingsPrinter = 'printer/settings';
@@ -55,8 +57,9 @@ const PrinterSettings = () => {
     saveData();
   };
 
+
   return Object.entries(printerData).length <= 0 ? (
-    <h1>Loading ...</h1>
+    <Loading />
   ) : (
     <>
       <HeaderSection

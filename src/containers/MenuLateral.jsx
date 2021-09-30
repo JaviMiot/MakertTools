@@ -1,36 +1,48 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import '../assets/styles/containers/MenuLateral.scss';
 
 const MenuLateral = (props) => {
   const { menuItems } = props;
-  debugger;
+  const linkRefs = menuItems.map((item) => useRef());
+
+  const getImgLinkRef = (event) => {
+    const index = event.target.dataset.key;
+    const linkElement = linkRefs[index].current;
+    const img = linkElement.childNodes[0];
+    return [img, linkElement];
+  };
 
   const handleItemSelect = (event) => {
     const items = document.querySelectorAll('.item-menu');
     const imagenItems = document.querySelectorAll('.item-menu img');
-
-    let itemSelected;
-    let imagenIconSelected;
-
+    
     items.forEach((item) => {
       item.classList.remove('select--Item');
     });
 
-    imagenItems.forEach((imagen) => {
-      imagen.src = imagen.dataset.iconDisable;
+    imagenItems.forEach((img) => {
+      img.src = img.dataset.iconDisable;
     });
 
-    if (event.target.nodeName === 'A') {
-      itemSelected = event.target;
-      imagenIconSelected = itemSelected.childNodes[0];
-    } else {
-      itemSelected = event.target.parentNode;
-      imagenIconSelected = itemSelected.childNodes[0];
+    const [img, linkElement] = getImgLinkRef(event);
+
+    linkElement.classList.add('select--Item');
+    img.src = img.dataset.iconEnable;
+  };
+
+  const handlerMouseOver = (event) => {
+    const [img] = getImgLinkRef(event);
+    img.src = img.dataset.iconEnable;
+  };
+
+  const handlerMouseLeave = (event) => {
+    const [img, linkElement] = getImgLinkRef(event);
+
+    if (!linkElement.classList.contains('select--Item')) {
+      img.src = img.dataset.iconDisable;
     }
-    itemSelected.classList.add('select--Item');
-    imagenIconSelected.src = imagenIconSelected.dataset.iconEnable;
   };
 
   return (
@@ -44,12 +56,17 @@ const MenuLateral = (props) => {
                 className='item-menu'
                 to={item.url}
                 onClick={handleItemSelect}
+                onMouseOver={handlerMouseOver}
+                onMouseLeave={handlerMouseLeave}
+                ref={linkRefs[index]}
+                data-key={index}
               >
                 <img
                   key={index}
                   src={item.iconDisable}
                   data-icon-disable={item.iconDisable}
                   data-icon-enable={item.iconEnable}
+                  data-key={index}
                   alt={item.name}
                 />
                 {item.name}

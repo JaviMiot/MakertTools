@@ -1,0 +1,52 @@
+@import '../vars';
+
+@mixin center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-container {
+  @include background-main;
+  @include center-container;
+  width: 100%;
+  height: 100%;
+  .circle-rotate {
+    @include center-container;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 4px dashed $blue-sky;
+    animation-name: turn-circle;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+}
+
+picture {
+  position: absolute;
+  padding: 35px;
+  border-radius: 50%;
+  border: 3px solid $white;
+
+  img {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+@keyframes turn-circle {
+  0% {
+    transform: scale(1) rotate(0deg);
+    border: 4px dashed $blue-sky;
+  }
+
+  50% {
+    transform: scale(1.05);
+    border: 4px dashed $blue-sky;
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}

@@ -10,3 +10,11 @@ $box-shadow-blue-dark: rgba(2, 40, 89, 0.3);
 
 //* dimensions
 $header-height: 56px;
+
+@mixin background-main {
+  background: linear-gradient(
+    0deg,
+    rgba(12, 81, 142, 1) 30%,
+    rgba(12, 38, 73, 1) 100%
+  );
+}

@@ -4,7 +4,7 @@
   display: none;
   width: 15%;
   min-width: 150px;
-  background-color: $dark-blue;
+  @include background-main;
 }
 
 .lateral-menu--items {
